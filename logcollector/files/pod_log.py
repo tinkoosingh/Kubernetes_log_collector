@@ -1,6 +1,7 @@
 ## POD
 
 from kubernetes import client, config, watch
+from kubernetes.client import configuration
 from elasticsearch import Elasticsearch
 from kubernetes.client.rest import ApiException
 from elasticsearch import ElasticsearchException
@@ -8,7 +9,9 @@ import os
 from datetime import datetime
 import json
 import time
-    
+
+configuration.assert_hostname = False
+
 try:
     config.load_incluster_config()                                   # cofigure kubernetes python client
 except config.ConfigException as e:
