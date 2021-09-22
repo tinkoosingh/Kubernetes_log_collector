@@ -16,12 +16,10 @@ while true
 do
 	if [[ $Is_ready == *"$ready"* ]]
 	then 
-		echo "Enter user name : "
-		read User_name
 
-		helm install --name log logcollector/ --values logcollector/values.yaml --namespace=aiops --set env.eventLogIndexValue=$User_name --set env.podLogIndexValue=$User_name
+		helm install --name log logcollector/ --values logcollector/values.yaml --namespace=aiops 
 
-		helm install --name metric metriccollector/ --values metriccollector/values.yaml --namespace=aiops --set env.metricLogIndexValue=$User_name --set env.prometheusLogIndexValue=$User_name
+		helm install --name metric metriccollector/ --values metriccollector/values.yaml --namespace=aiops 
 		break
 	else	
 		echo "NOT READY CONTAINER\n"
