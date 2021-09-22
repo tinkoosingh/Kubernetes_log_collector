@@ -5,7 +5,7 @@ prometheus:
   replicaCount: 1
   containers:
     name: metricollector
-    image: aiopsdata/metricollector
+    image: aiopsdata/metricollector:latest
     imagePullPolicy: IfNotPresent
   
 env:
