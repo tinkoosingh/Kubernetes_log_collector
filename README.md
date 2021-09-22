@@ -17,9 +17,9 @@ This collector is designed to collect realtime **Events** and **Metrices** gener
 ### Install all components with default configuration
 #### `./agents.sh`
 ### Install Specific Components
-- **Logcollector (Pod Logs and Events)** 
+- **Logcollector (Pod Logs and Events) with Elasticsearch** 
   - `./agents.sh -l`
-- **Metriccollector (Metrices)**
+- **Metriccollector (Metrices) with Elasticsearch**
   - `./agents.sh -m`
 - **Elasticsearch with kibana**
   - `./agents.sh -e`
