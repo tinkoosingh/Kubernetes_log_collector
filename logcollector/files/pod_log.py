@@ -44,8 +44,10 @@ while(1):
 
         if pod.status.container_statuses[0].ready is False:                 # Check if pod is not ready
             continue
+            
+         c_name=pod.spec.containers[0].name
 
-        data = pod_list_api.read_namespaced_pod_log(namespace = namespace,name = podname)
+        data = pod_list_api.read_namespaced_pod_log(namespace = namespace,name = podname, container = c_name)
         date = datetime.now()
         date = date.strftime("%d/%m/%Y %H:%M:%S")
         data_dic = json.dumps(dict({'agent' : "log-collector",'datetime': date,'namespace' : namespace, 'pod': podname , 'time': round(time.time(), 2), 'podlog': data}))
