@@ -51,7 +51,22 @@ Run `minikube ip` to get your minikube ip address, which will help you in access
      - `kubectl port-forward --namespace aiops $POD_NAME 9100`
    - After above steps, prometheus will be available on
      - `http://localhost:9100`
-    
+
+## Uninstall
+### Uninstall All Components
+- `./uninstall.sh`
+- It will remove Elasticsearch, kibana, node-expoter, Logcollector and Metriccollector.
+
+### Uninstall Logcollector
+- `./uninstall.sh -l`
+- It will only remove Logcollector.
+
+### Uninstall Metriccollector
+- `./uninstall.sh -m`
+- It will remove Metriccollector and node-expoter.
+### Uninstall Elasticsearch and Kibana **(Only for Local)**
+- `./uninstall.sh -e`
+- It will remove Elasticsearch and Kibana.
  
 
 
