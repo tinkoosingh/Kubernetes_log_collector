@@ -6,7 +6,7 @@ prometheus:
   containers:
     name: metricollector
     image: "aiopsdata/metricollector:latest"
-    imagePullPolicy: IfNotPresent
+    imagePullPolicy: Always
   
 env:
   ESConnectionKey: ELASTICSEARCH_URL
