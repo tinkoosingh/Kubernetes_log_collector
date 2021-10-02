@@ -35,7 +35,7 @@ try:
             except ElasticsearchException as e:
                 print("\n Exception when calling ElasticsearchApi: %s\n" % e)
         dic_data = {}
-         event_data = {'kind':event['raw_object']['kind'],'name':event['raw_object']['metadata']['name'],
+        event_data = {'kind':event['raw_object']['kind'],'name':event['raw_object']['metadata']['name'],
                 'namespace':event['raw_object']['metadata']['namespace'],
                 'uid':event['raw_object']['metadata']['uid'],
                 'resourceVersion':event['raw_object']['metadata']['resourceVersion'],
